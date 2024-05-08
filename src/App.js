@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import { createContext, useState } from 'react';
+import { Route, Routes } from "react-router-dom";
+import LoginPage from './components/login/LoginPage';
+import ProjectsPage from './components/projects/ProjectsPage';
+import ProjectDetailsPage from './components/projectDetails/ProjectDetailsPage';
+import ProtectedRoutes from "./ProtectedRoutes";
 
-function App() {
+export const UserContext = createContext();
+
+const App = () => {
+  const [user, setUser] = useState({ loggedIn: false });
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <UserContext.Provider value={{ user, setUser }}>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route element={<ProtectedRoutes />}>
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/project/:id" element={<ProjectDetailsPage />} />
+        </Route>
+      </Routes>
+    </UserContext.Provider>
+    // <ProjectDetailsPage/>
+  )
+};
 
 export default App;

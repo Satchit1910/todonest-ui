@@ -1,0 +1,231 @@
+/* ProjectDetailsPage.css */
+.container-project {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 60px;
+    background: #fff;
+    width: 100%;
+    padding-bottom: 50px;
+    min-height:calc(100vh - 110px);
+    overflow-y: auto;
+  }
+  
+  .header-project {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 4% 5% 2% 5%;
+    padding: 0 20px;
+}
+
+.text-project {
+    color: #3c009d;
+    font-size: 48px;
+    font-weight: 700;
+    flex-grow: 1; /* Make the text take up remaining space */
+}
+
+.edit-project-btn,
+.export-project-btn {
+    color: #3c009d;
+    border: 3px solid #3c009d; /* Add border instead of background */
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-weight: 700;
+}
+
+.edit-project-btn {
+    margin-right: 10px;
+}
+
+.edit-project-btn:hover,
+.export-project-btn:hover {
+    background-color: #3c009d;
+    color: #fff; 
+    border-color: #3c009d; 
+}
+  
+  .subheading {
+    margin-top: 20px;
+    padding: 0 20px;
+    font-size: 20px;
+  }
+  
+  .add-todo {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    padding: 0 40px;
+  }
+  
+  .add-todo input[type='text'] {
+    flex: 1;
+    height: 30px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 18px;
+  }
+  
+  .add-todo-btn {
+    background-color: #3c009d;
+    color: #fff;
+    border: 2px solid #3c009d;
+    padding: 11px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    /* height: 30px; */
+  }
+
+  .add-todo-btn:hover {
+    color: #3c009d;
+    border: 2px solid #3c009d;
+    background-color: #fff;
+  }
+  
+  .todo-list {
+    padding: 0 20px;
+    overflow-y: auto;
+  }
+  
+  .todo-item {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+  }
+  
+  .todo-item input[type='checkbox'] {
+    margin-right: 10px;
+    height: 25px;
+  }
+  
+  .todo-description {
+    flex: 1;
+    font-size: 18px;
+  }
+  
+  .edit-todo-btn {
+    background-color: #808080;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .edit-todo-btn img {
+    height: 16px;
+    width: 15px;
+  }
+
+  .delete-todo-btn {
+    background-color: #ff4d4f;
+    color: #fff;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .delete-todo-btn img {
+    height: 20px;
+    width: 15px;
+  }
+
+  .todos-container {
+    padding: 0% 24% 0% 24%;
+  }
+
+  .back-btn {
+    color: #3c009d;
+    border: 2px solid #3c009d; /* Add border instead of background */
+    padding: 4px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+    margin-left: 15px;
+  }
+
+  .back-btn:hover {
+    background-color: #3c009d;
+    color: #fff; 
+    border-color: #3c009d; 
+  }
+
+  .export-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .export-popup-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  }
+
+  .export-popup-content input {
+    height: 50px;
+    width: 400px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #797979;
+    font-size: 19px;
+  }
+  
+  .close-popup-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  
+  .export-popup-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .export-cancel-btn,
+  .export-download-btn {
+    background-color: #3c009d;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin:10px;
+  }
+  
+  .export-cancel-btn {
+    background-color: #ccc;
+  }
+  
+  .export-cancel-btn:hover,
+  .export-download-btn:hover,
+  .view-project-btn:hover,
+  .new-project-btn:hover {
+    opacity: 0.8;
+  }
+  
