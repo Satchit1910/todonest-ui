@@ -26,6 +26,7 @@ function ProjectDetailsPage() {
     const navigate = useNavigate();
     const [showExportProjectPopup, setShowExportProjectPopup] = useState(false);
     const [gistHTMLLink,setGistHTMLLink] = useState('');
+    const [noTodosMessage, setNoTodosMessage] = useState('');
  
 
   const handleEditProject = () => {
@@ -146,6 +147,7 @@ function ProjectDetailsPage() {
             return 0;
           });
         setTodos(data.todos);
+        setNoTodosMessage("Create some Todos for your Project.");
       } catch (error) {
         console.error('Error fetching project details:', error);
       }
@@ -214,7 +216,8 @@ function ProjectDetailsPage() {
             <input type='text' placeholder='Add new Todo' value={newTodo} onChange={(e) => setNewTodo(e.target.value)} />
             <button title="Add Todo" className="add-todo-btn" onClick={handleAddTodo}>+</button>
         </div>
-        <div className='todo-list'>
+        { todos.length > 0 ? 
+            <div className='todo-list'>
             {todos.map((todo, index) => (
             <div key={index} className='todo-item'>
                 <input type='checkbox' checked={todo.status==='completed'} onChange={() => handleToggleTodo(index)} />
@@ -224,6 +227,9 @@ function ProjectDetailsPage() {
             </div>
             ))}
         </div>
+        :
+        (<p className="no-todos-msg">{noTodosMessage}</p>)}
+        
       </div>
 
       {showEditProjectPopup && (

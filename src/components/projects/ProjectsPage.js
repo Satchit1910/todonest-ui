@@ -17,6 +17,7 @@ const ProjectsPage = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [newProjectName, setNewProjectName] = useState('');
   const navigate = useNavigate();
+  const [noProjectsMessage, setNoProjectsMessage] = useState('')
 
   // Function to handle creating a new project
   const handleCreateProject = async () => {
@@ -49,6 +50,7 @@ const ProjectsPage = () => {
         createdAt: formatDate(project.createdAt)
       }));
       setProjects(formattedProjects);
+      setNoProjectsMessage("You have no projects, create one!");
     } catch (error) {
       console.error('Error fetching projects:', error);
     }
@@ -92,17 +94,21 @@ const ProjectsPage = () => {
       <button className="new-project-btn" onClick={() => setShowPopup(true)}>Create New Project</button>
 
       {/* Project List */}
-      <ul className="project-list">
-        {projects.map(project => (
-          <li key={project.id} className="project-item">
-            <div className="project-info">
-              <h3 className="project-name">{project.title}</h3>
-              <p className="created-date">Created on {project.createdAt}</p>
-            </div>
-            <button className="view-project-btn" onClick={() => openProject(project.id)}>View Project</button>
-          </li>
-        ))}
-      </ul>
+      {projects.length > 0 ? 
+        <ul className="project-list">
+          {projects.map(project => (
+            <li key={project.id} className="project-item">
+              <div className="project-info">
+                <h3 className="project-name">{project.title}</h3>
+                <p className="created-date">Created on {project.createdAt}</p>
+              </div>
+              <button className="view-project-btn" onClick={() => openProject(project.id)}>View Project</button>
+            </li>
+          ))}
+        </ul> :
+        <p className="no-projects-msg">{noProjectsMessage}</p>
+      }
+      
 
       {/* New Project Popup */}
       {showPopup && (

@@ -79,6 +79,13 @@ const LoginPage = () => {
         return emailPattern.test(email);
       };
 
+    const handleNavToLogin = () => {
+        setAction('Login');
+        setName("");
+        setEmail("");
+        setPassword("");
+    }
+
     return (
         <div className='container'>
             <div className='header'>
@@ -102,7 +109,7 @@ const LoginPage = () => {
                         onChange={(e) => setPassword(e.target.value)}/>
                 </div>
             </div>
-            {action==='Signup' ? <div></div> : <div className='forgot-password'>Don't have an account? &nbsp;<span onClick={handleCreateNewAccount}>Create one here.</span> </div>}
+            {action==='Signup' ? <div className='forgot-password'>Already have an account? &nbsp;<span onClick={handleNavToLogin}>Log in here.</span> </div> : <div className='forgot-password'>Don't have an account? &nbsp;<span onClick={handleCreateNewAccount}>Create one here.</span> </div>}
             <div className='submit-container'>
                 {action==='Login' ? <div className='submit' onClick={handleLogin}>Log In</div> : <div className='submit' onClick={handleSignUp}>Sign Up</div>}
                 
