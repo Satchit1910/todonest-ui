@@ -3,7 +3,7 @@
 
 UI for TodoNest, a project and todo management app.
 
-I have hosted the full stack-app using AWS services. Check it out [here](http://todonest-ui.s3-website-us-east-1.amazonaws.com).
+I have hosted the full-stack app using AWS services. Check it out [here](http://todonest-ui.s3-website-us-east-1.amazonaws.com).
 
 This project is written using ReactJs. 
 
