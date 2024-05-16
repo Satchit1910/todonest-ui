@@ -3,7 +3,7 @@
 
 UI for TodoNest, a project and todo management app.
 
-I have hosted the full-stack app using Vercel and render.com. Check it out Check it out [here](https://todonest-v1.vercel.app/).
+I have hosted the full-stack app using Vercel and render.com. Check it out [here](https://todonest-v1.vercel.app/).
 
 This project is written using ReactJs. 
 
